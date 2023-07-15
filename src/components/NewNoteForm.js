@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import classes from "./NewNoteForm.module.css";
 
@@ -26,11 +26,18 @@ function NewNoteForm() {
     const newText = e.target[1].value;
     const id = Math.random(1, 9);
 
-    if (isShowForm) {
-      if (newText.trim().length < 1) {
-        alert("You try add empty note");
-        changeHandlerShowForm();
-        return;
+    if (newText.trim().length < 1) {
+      alert("You try add empty note");
+    } else {
+      if (isEditForm) {
+        for (let item of arrNote) {
+          if (item.id === idChoiceNote) {
+            item.date = newDate;
+            item.text = newText;
+            e.target.reset();
+            handlerEditForm();
+          }
+        }
       } else {
         const newNote = {
           id: id,
@@ -38,20 +45,22 @@ function NewNoteForm() {
           text: newText,
         };
         addNewNote(newNote);
-        changeHandlerShowForm();
         e.target.reset();
+        changeHandlerShowForm();
       }
     }
   }
 
-  if (isEditForm) {
-    for (let item of arrNote) {
-      if (item.id === idChoiceNote) {
-        handlerChoiceNoteDate(item.date);
-        handlerChoiceNoteText(item.text);
+  useEffect(() => {
+    if (isEditForm) {
+      for (let item of arrNote) {
+        if (item.id === idChoiceNote) {
+          handlerChoiceNoteDate(item.date);
+          handlerChoiceNoteText(item.text);
+        }
       }
     }
-  }
+  }, [isEditForm, arrNote]);
 
   return (
     <div
@@ -78,13 +87,8 @@ function NewNoteForm() {
           >
             Cancel
           </button>
-          <button
-            type={isEditForm ? "button" : "submit"}
-            onClick={isEditForm ? deleteNote : null}
-          >
-            {isEditForm ? "delete" : "Add"}
-          </button>
-          {isEditForm ? <button>Edit</button> : null}
+          <button type="submit">{isEditForm ? "Save" : "Add"}</button>
+          {isEditForm ? <button onClick={deleteNote}>Delete</button> : null}
         </div>
       </form>
     </div>

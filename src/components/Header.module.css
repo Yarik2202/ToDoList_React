@@ -1,11 +1,13 @@
 .header_element_position {
     margin: auto;
     width: 90%;
+    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color:rgb(32, 123, 188)
+    color:rgb(32, 123, 188);
+    
 }
 
 .header_element_position > div {
@@ -26,5 +28,6 @@
     font-size: 26px;
     font-weight: 900;
     border-bottom: 3px solid rgb(32, 123, 188);
+    text-shadow: 2px 2px 1px rgb(14, 29, 168);
 }
 

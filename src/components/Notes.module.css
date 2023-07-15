@@ -1,0 +1,49 @@
+.notes_message_none {
+    display: none;
+}
+
+.choice_note_none {
+    visibility: hidden;
+}
+
+.notes_message {
+    color:rgb(32, 123, 188);
+    font-size: 40px;
+    font-weight: 900;
+    position:fixed;
+    top:30%;
+}
+
+.notes_background {
+    margin: 20px;
+    background-image: url('../../public/png/note.png');
+    background-size: 100%;
+    width: 200px;
+    height:200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.notes_date {
+    padding-top: 20px;
+    text-align: center;
+    color:rgb(32, 123, 188);
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.notes_text {
+    margin:0px auto;
+    padding-top: 15px;
+    width: 80%;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    color:rgb(32, 123, 188);
+    font-size: 20px;
+    word-wrap:break-word;
+}

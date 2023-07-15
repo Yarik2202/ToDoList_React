@@ -1,0 +1,76 @@
+.display_none {
+    display: none;
+}
+
+.background_form{
+    margin: 0px auto;
+    width:350px;
+    height: 300px;
+    background-image: url('../../public/png/onlyNote.png');
+    background-size: 110%;
+    background-repeat:no-repeat ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 25%;
+    
+} 
+
+.form_element_position {
+    margin: 0px auto;
+    padding-top: 15px;
+    width:70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_element_position input {
+    border: none;
+    text-decoration: none;
+    height: 30px;
+    mix-blend-mode: multiply;
+    font-size: 20px;
+    color: rgb(32, 123, 188);
+}
+
+.form_element_position input:focus {
+    outline: none;
+}
+
+.form_element_position textarea {
+    border: none;
+    mix-blend-mode: multiply;
+    font-size: 40px;
+    color: rgb(32, 123, 188);
+    height: 160px;
+    resize:none;
+    text-align: center;
+    
+   
+}
+
+.form_element_position textarea:focus {
+    outline: none;
+}
+
+.form_button_position {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form_button_position button {
+    width: 28%;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(32, 123, 188);
+    border: none;
+}
+
+.form_button_position button:hover {
+    color:rgb(161, 199, 224);
+    text-shadow: 1px 1px 0px rgb(32, 123, 188); 
+}
